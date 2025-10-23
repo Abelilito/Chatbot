@@ -4,11 +4,7 @@ import { X } from "lucide-react";
 
 export const ClearChat = () => {
   const messages = useChatStore((state) => state.messages);
-
-  function clear(messages) {
-    messages.length = 0;
-  }
-  console.log(messages);
+  const clearChat = useChatStore((state) => state.clearChat);
 
   if (messages.length > 0) {
     return (
@@ -18,7 +14,7 @@ export const ClearChat = () => {
           rounded-full py-[20px] px-8 bg-red-900 hover:bg-red-800 shadow-[2px_1px_2px_gray] 
           active:shadow-[0_0_0_white]
         "
-          onClick={() => clear(messages)}
+          onClick={() => clearChat()}
         >
           <X />
         </Button>
