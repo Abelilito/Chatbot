@@ -21,31 +21,25 @@ export const ChatMessages = () => {
 
   return (
     <>
-      <div
-        className="
-        border border-solid border-stone-200 w-[50%] rounded-2xl p-4 flex flex-col gap-8 h-[20rem] overflow-auto 
-      "
-      >
+      <div className="flex flex-col gap-8 mb-[18rem] overflow-auto p-4 w-full md:w-[40%]">
         {messages.map((msg, index) => (
           <div
             key={index}
             className={
-              "w-full flex " +
+              " flex " +
               (msg.user_name === "Human" ? "justify-end" : "justify-start")
             }
             ref={chatBoxMessage}
           >
-            <div className="w-[50%]">
-              <div
-                className={
-                  "p-[10px] rounded-2xl font-sm " +
-                  (msg.user_name === "Human"
-                    ? "bg-blue-600 text-white text-start"
-                    : "text-neutral-800 bg-stone-100")
-                }
-              >
-                {msg.text}
-              </div>
+            <div
+              className={
+                "p-[10px] rounded-2xl font-sm " +
+                (msg.user_name === "Human"
+                  ? "bg-blue-600 text-white text-start"
+                  : "text-neutral-800")
+              }
+            >
+              {msg.text}
             </div>
           </div>
         ))}
